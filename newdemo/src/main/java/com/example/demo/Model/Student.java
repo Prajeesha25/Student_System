@@ -1,18 +1,17 @@
 package com.example.demo.Model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+
 @Document("students")
 public class Student {
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+   //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
-    //@JsonFormat(pattern = "dd/MM/yyyy")
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String standard;
     private String divison;
     private String gender ;
@@ -37,11 +36,11 @@ public class Student {
         this.name = name;
     }
 
-    public Date getDateOfBirth(Date dateOfBirth) {
+    public String getDateOfBirth() {
         return this.dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -69,7 +68,7 @@ public class Student {
         this.gender = gender;
     }
 
-    public Student(String name, Date dateOfBirth, String standard, String divison, String gender) {
+    public Student(String name, String dateOfBirth, String standard, String divison, String gender) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.standard = standard;

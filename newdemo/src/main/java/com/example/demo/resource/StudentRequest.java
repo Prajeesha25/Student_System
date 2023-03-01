@@ -8,8 +8,8 @@ public class StudentRequest {
 
     private String id;
     private String name;
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private Date dateOfBirth;
+
+    private String dateOfBirth;
     private String standard;
     private String divison;
     private String gender ;
@@ -30,11 +30,11 @@ public class StudentRequest {
         this.name = name;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -62,7 +62,7 @@ public class StudentRequest {
         this.gender = gender;
     }
 
-    public StudentRequest(String name, Date dateOfBirth, String standard, String divison, String gender) {
+    public StudentRequest(String name, String dateOfBirth, String standard, String divison, String gender) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.standard = standard;
